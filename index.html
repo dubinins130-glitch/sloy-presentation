@@ -4,9 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <meta name="description" content="Коммерческая презентация студии SLOY. Два сайта и семь интерактивных прототипов.">
-  <title>SLOY — сайты для интерьеров и мебели</title>
-  <link rel="icon" href="assets/sloy.png" type="image/png">
+  <meta name="description" content="Коммерческое предложение KeetsCode. Демосайты, примеры доработок и стоимость.">
+  <meta name="author" content="KeetsCode">
+  <title>KeetsCode. Коммерческое предложение</title>
+  <link rel="icon" href="assets/keetscode.png" type="image/png">
   <link rel="stylesheet" href="deck.css">
   <script src="assets/gsap.min.js" defer></script>
   <script src="deck.js" defer></script>
@@ -14,11 +15,11 @@
 </head>
 <body class="theme-dark">
   <header class="topbar">
-    <a class="wordmark" href="#sloy" data-jump="sloy" aria-label="SLOY, титульный экран">SLOY</a>
-    <p class="chapter" id="chapter">Коммерческая презентация</p>
+    <a class="wordmark" href="#keetscode" data-jump="keetscode" aria-label="KeetsCode, титульный экран">KeetsCode</a>
+    <p class="chapter" id="chapter">Презентация</p>
     <div class="top-actions">
       <button class="toolbar-button" id="open-index" type="button" aria-haspopup="dialog" aria-controls="deck-index">
-        <span class="index-icon" aria-hidden="true"></span>Разделы
+        Разделы
       </button>
       <button class="toolbar-button fullscreen" id="fullscreen" type="button" aria-pressed="false" title="Полный экран (F)">
         <span class="fullscreen-icon" aria-hidden="true"></span><span id="fullscreen-label">Полный экран</span>
@@ -27,56 +28,46 @@
   </header>
 
   <main class="viewport" id="viewport" aria-label="Слайды презентации">
-    <section class="slide cover" id="sloy" data-theme="dark" data-chapter="Коммерческая презентация" aria-labelledby="cover-title">
+    <section class="slide cover" id="keetscode" data-theme="dark" data-chapter="Презентация" aria-labelledby="cover-title">
       <header class="cover-meta enter">
-        <p>Коммерческое предложение</p><time datetime="2026-11-26">26 ноября 2026</time>
+        <p>Коммерческое предложение</p>
       </header>
       <div class="cover-main">
-        <div class="cover-word enter" aria-hidden="true">SLOY</div>
-        <h1 id="cover-title" class="enter" tabindex="-1">Сайты для интерьеров<br>и мебели</h1>
+        <div class="cover-word enter" aria-hidden="true">KeetsCode</div>
+        <h1 id="cover-title" class="enter" tabindex="-1">Сайты и доработки</h1>
       </div>
       <div class="cover-contents enter" aria-label="Разделы">
-        <button type="button" data-jump="artburo">Готовые сайты</button>
+        <button type="button" data-jump="artburo">Демосайты</button>
         <button type="button" data-jump="development">Возможности развития</button>
         <button type="button" data-jump="pricing">Стоимость</button>
       </div>
     </section>
 
-    <section class="slide case-slide" id="artburo" data-chapter="Готовые сайты" aria-labelledby="art-title" hidden>
+    <section class="slide case-slide" id="artburo" data-chapter="Демосайты" aria-labelledby="art-title" hidden>
       <div class="case-intro enter">
-        <p class="status">Сайт опубликован</p>
         <h2 id="art-title" tabindex="-1">ArtBuro28</h2>
-        <p class="case-description">Сайт студии дизайна и ремонта. Галерея интерьеров, услуги и сравнение стадий проекта.</p>
-        <a class="solid" href="https://artburo28-demo.netlify.app/" target="_blank" rel="noopener noreferrer">Открыть живой сайт</a>
+        <p class="case-description">Галерея интерьеров, этапы ремонта и квиз «Подобрать дизайн-проект».</p>
+        <a class="solid" href="https://dubinins130-glitch.github.io/artburo28/" target="_blank" rel="noopener noreferrer">Открыть сайт</a>
       </div>
       <figure class="case-screen enter" data-gallery="art">
-        <div class="screen-caption">
-          <span data-shot-title>Главная страница</span>
-          <span class="screen-origin" data-shot-origin>Опубликованная версия</span>
-        </div>
         <div class="screen-image">
           <img src="assets/screens/art-home.webp" alt="Главная страница ArtBuro28. Крупный заголовок на фотографии спальни." width="1440" height="900">
         </div>
         <figcaption class="view-switch" role="group" aria-label="Экраны ArtBuro28">
           <button type="button" data-shot="0" aria-pressed="true">Главная</button>
           <button type="button" data-shot="1" aria-pressed="false">Проекты</button>
-          <button type="button" data-shot="2" aria-pressed="false">Квиз · локально</button>
+          <button type="button" data-shot="2" aria-pressed="false">Квиз</button>
         </figcaption>
       </figure>
     </section>
 
-    <section class="slide case-slide" id="prosto" data-chapter="Готовые сайты" aria-labelledby="prosto-title" hidden>
+    <section class="slide case-slide" id="prosto" data-chapter="Демосайты" aria-labelledby="prosto-title" hidden>
       <div class="case-intro enter">
-        <p class="status">Сайт опубликован</p>
         <h2 id="prosto-title" tabindex="-1">Просто<br> мебель</h2>
-        <p class="case-description">Сайт мебели на заказ. Анимированная главная и конфигураторы для пяти направлений.</p>
-        <a class="solid" href="https://prosto-mebel-blg.netlify.app/" target="_blank" rel="noopener noreferrer">Открыть живой сайт</a>
+        <p class="case-description">Сайт мебели на заказ. В пяти категориях можно настроить параметры мебели.</p>
+        <a class="solid" href="https://prosto-mebel-blg.netlify.app/" target="_blank" rel="noopener noreferrer">Открыть сайт</a>
       </div>
       <figure class="case-screen enter" data-gallery="prosto">
-        <div class="screen-caption">
-          <span data-shot-title>Главная страница</span>
-          <span class="screen-origin" data-shot-origin>Опубликованная версия</span>
-        </div>
         <div class="screen-image">
           <img src="assets/screens/prosto-home.webp" alt="Главная сайта «Просто мебель» с заголовком «По вашим размерам»." width="1440" height="900">
         </div>
@@ -88,26 +79,43 @@
       </figure>
     </section>
 
+    <section class="slide case-slide" id="druzhba" data-chapter="Демосайты" aria-labelledby="druzhba-title" hidden>
+      <div class="case-intro enter">
+        <h2 id="druzhba-title" tabindex="-1">Кафе<br> «Дружба»</h2>
+        <p class="case-description">Кафе китайской кухни. В меню есть поиск по названию блюда и составу.</p>
+        <a class="solid" href="https://kafe-druzhba.netlify.app/" target="_blank" rel="noopener noreferrer">Открыть сайт</a>
+      </div>
+      <figure class="case-screen enter" data-gallery="druzhba">
+        <div class="screen-image">
+          <img src="assets/screens/druzhba-home.webp" alt="Главная страница кафе «Дружба»." width="1440" height="900">
+        </div>
+        <figcaption class="view-switch" role="group" aria-label="Экраны сайта кафе «Дружба»">
+          <button type="button" data-shot="0" aria-pressed="true">Главная</button>
+          <button type="button" data-shot="1" aria-pressed="false">Меню</button>
+        </figcaption>
+      </figure>
+    </section>
+
     <section class="slide roadmap" id="development" data-theme="dark" data-chapter="Возможности развития" aria-labelledby="roadmap-title" hidden>
       <div class="roadmap-intro enter">
         <h2 id="roadmap-title" tabindex="-1">Что можно<br>добавить</h2>
-        <p>Семь интерактивных прототипов для обсуждения.</p>
+        <p>Семь примеров, которые можно попробовать.</p>
       </div>
       <ol class="roadmap-list enter">
         <li><button type="button" data-jump="plan"><span aria-hidden="true">01</span>Интерактивная планировка</button></li>
-        <li><button type="button" data-jump="materials"><span aria-hidden="true">02</span>Визуальная палитра материалов</button></li>
+        <li><button type="button" data-jump="materials"><span aria-hidden="true">02</span>Палитра материалов</button></li>
         <li><button type="button" data-jump="calculator"><span aria-hidden="true">03</span>Калькулятор стоимости</button></li>
         <li><button type="button" data-jump="constructor"><span aria-hidden="true">04</span>Конструктор интерьера</button></li>
         <li><button type="button" data-jump="portfolio"><span aria-hidden="true">05</span>Расширенное портфолио</button></li>
-        <li><button type="button" data-jump="cms"><span aria-hidden="true">06</span>Самостоятельное управление контентом</button></li>
+        <li><button type="button" data-jump="cms"><span aria-hidden="true">06</span>Управление контентом</button></li>
         <li><button type="button" data-jump="crm"><span aria-hidden="true">07</span>Интеграция с CRM</button></li>
       </ol>
     </section>
 
-    <section class="slide prototype" id="plan" data-chapter="Предлагаемый функционал" aria-labelledby="plan-title" hidden>
+    <section class="slide prototype" id="plan" data-chapter="Прототипы" aria-labelledby="plan-title" hidden>
       <header class="prototype-head enter">
-        <div><p class="status">Интерактивный прототип</p><h2 id="plan-title" tabindex="-1">Планировка помещения</h2></div>
-        <p>Смените план и выберите комнату.</p>
+        <div><h2 id="plan-title" tabindex="-1">Планировка помещения</h2></div>
+        <p>Выберите планировку и нажмите на комнату, чтобы увидеть её площадь.</p>
       </header>
       <div class="workbench enter">
         <div class="visual plan-visual">
@@ -132,10 +140,10 @@
       </div>
     </section>
 
-    <section class="slide prototype" id="materials" data-chapter="Предлагаемый функционал" aria-labelledby="materials-title" hidden>
+    <section class="slide prototype" id="materials" data-chapter="Прототипы" aria-labelledby="materials-title" hidden>
       <header class="prototype-head enter">
-        <div><p class="status">Интерактивный прототип</p><h2 id="materials-title" tabindex="-1">Палитра материалов</h2></div>
-        <p>Комбинируйте отделку стен, пола и фасадов.</p>
+        <div><h2 id="materials-title" tabindex="-1">Палитра материалов</h2></div>
+        <p>Выберите отделку для стен, пола и фасадов.</p>
       </header>
       <div class="workbench enter">
         <div class="visual room-visual">
@@ -149,31 +157,31 @@
       </div>
     </section>
 
-    <section class="slide prototype" id="calculator" data-chapter="Предлагаемый функционал" aria-labelledby="calculator-title" hidden>
+    <section class="slide prototype" id="calculator" data-chapter="Прототипы" aria-labelledby="calculator-title" hidden>
       <header class="prototype-head enter">
-        <div><p class="status">Интерактивный прототип</p><h2 id="calculator-title" tabindex="-1">Калькулятор стоимости</h2></div>
-        <p>Введите свою ставку и измените площадь.</p>
+        <div><h2 id="calculator-title" tabindex="-1">Калькулятор стоимости</h2></div>
+        <p>Введите ставку за м² и выберите площадь.</p>
       </header>
       <div class="calculator-grid enter">
         <div class="calculator-controls">
           <div class="input-caption"><label for="area-range">Площадь</label><output id="area-number" for="area-range">60 м²</output></div>
           <input type="range" id="area-range" min="20" max="200" value="60" step="1">
           <p class="range-ends"><span>20 м²</span><span>200 м²</span></p>
-          <label class="block-label" for="rate-input">Ваша ставка за м²</label>
-          <div class="currency-input"><input type="number" id="rate-input" min="1" max="9999999" step="1" inputmode="numeric" placeholder="Введите сумму"><span>₽</span></div>
+          <label class="block-label" for="rate-input">Ставка за м²</label>
+          <div class="currency-input"><input type="number" id="rate-input" min="1" max="9999999" step="1" inputmode="numeric"><span>₽</span></div>
         </div>
         <div class="calculator-output">
           <p>Площадь × введённая ставка</p>
-          <output id="estimate-output" for="area-range rate-input" aria-live="polite">—</output>
-          <p id="estimate-expression">Результат появится после ввода ставки.</p>
+          <output id="estimate-output" for="area-range rate-input" aria-live="polite"></output>
+          <p id="estimate-expression">Введите ставку для расчёта.</p>
         </div>
       </div>
     </section>
 
-    <section class="slide prototype" id="constructor" data-chapter="Предлагаемый функционал" aria-labelledby="constructor-title" hidden>
+    <section class="slide prototype" id="constructor" data-chapter="Прототипы" aria-labelledby="constructor-title" hidden>
       <header class="prototype-head enter">
-        <div><p class="status">Интерактивный прототип</p><h2 id="constructor-title" tabindex="-1">Конструктор интерьера</h2></div>
-        <p>Меняйте мебель и её расположение в комнате.</p>
+        <div><h2 id="constructor-title" tabindex="-1">Конструктор интерьера</h2></div>
+        <p>Выберите диван, стол и их расположение.</p>
       </header>
       <div class="workbench enter">
         <div class="visual room-visual">
@@ -197,10 +205,10 @@
       </div>
     </section>
 
-    <section class="slide prototype" id="portfolio" data-chapter="Предлагаемый функционал" aria-labelledby="portfolio-title" hidden>
+    <section class="slide prototype" id="portfolio" data-chapter="Прототипы" aria-labelledby="portfolio-title" hidden>
       <header class="prototype-head enter">
-        <div><p class="status">Интерактивный прототип</p><h2 id="portfolio-title" tabindex="-1">Расширенное портфолио</h2></div>
-        <p>Фильтры и подробности на материалах демосайтов.</p>
+        <div><h2 id="portfolio-title" tabindex="-1">Расширенное портфолио</h2></div>
+        <p>Выберите категорию, чтобы открыть подходящие примеры.</p>
       </header>
       <div class="workbench portfolio-workbench enter">
         <figure class="visual portfolio-visual">
@@ -212,26 +220,26 @@
             <button type="button" data-filter="interior" aria-pressed="false">Интерьер</button>
             <button type="button" data-filter="furniture" aria-pressed="false">Мебель</button>
           </div>
-          <div id="portfolio-list" class="portfolio-list" role="group" aria-label="Материалы"></div>
+          <div id="portfolio-list" class="portfolio-list" role="group" aria-label="Проекты"></div>
           <div class="portfolio-detail">
             <h3 id="portfolio-detail-title">Галерея интерьеров</h3>
-            <p id="portfolio-detail-copy">Планировки и отделка на примерах из демонстрационного портфолио ArtBuro28.</p>
+            <p id="portfolio-detail-copy">Фотографии и описания планировок из демосайта ArtBuro28.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="slide prototype" id="cms" data-chapter="Предлагаемый функционал" aria-labelledby="cms-title" hidden>
+    <section class="slide prototype" id="cms" data-chapter="Прототипы" aria-labelledby="cms-title" hidden>
       <header class="prototype-head enter">
-        <div><p class="status">Интерактивный прототип</p><h2 id="cms-title" tabindex="-1">Управление контентом</h2></div>
-        <p>Измените текст и примените его в макете.</p>
+        <div><h2 id="cms-title" tabindex="-1">Управление контентом</h2></div>
+        <p>Измените текст и посмотрите, как он выглядит на странице.</p>
       </header>
       <div class="editor-grid enter">
         <form class="editor-form" id="editor-form">
           <label for="editor-title">Заголовок</label>
           <input id="editor-title" value="Интерьеры на заказ" maxlength="48" required>
           <label for="editor-description">Описание</label>
-          <textarea id="editor-description" rows="2" maxlength="100" required>Планировка, материалы и детали для вашего пространства.</textarea>
+          <textarea id="editor-description" rows="2" maxlength="100" required>Дизайн квартир и домов.</textarea>
           <div class="editor-actions">
             <button class="solid" type="submit">Применить в макете</button>
             <button class="text-button" type="reset">Сбросить</button>
@@ -239,49 +247,49 @@
           <output id="editor-status" aria-live="polite"></output>
         </form>
         <div class="editor-preview">
-          <p>Локальный предпросмотр</p>
+          <p>Предпросмотр страницы</p>
           <div>
             <h3 id="preview-title">Интерьеры на заказ</h3>
-            <p id="preview-description">Планировка, материалы и детали для вашего пространства.</p>
+            <p id="preview-description">Дизайн квартир и домов.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="slide prototype" id="crm" data-chapter="Предлагаемый функционал" aria-labelledby="crm-title" hidden>
+    <section class="slide prototype" id="crm" data-chapter="Прототипы" aria-labelledby="crm-title" hidden>
       <header class="prototype-head enter">
-        <div><p class="status">Интерактивный прототип</p><h2 id="crm-title" tabindex="-1">Интеграция с CRM</h2></div>
-        <p>Путь тестовой заявки от сайта до ответственного.</p>
+        <div><h2 id="crm-title" tabindex="-1">Интеграция с CRM</h2></div>
+        <p>Посмотрите, как заявка с сайта попадает к менеджеру.</p>
       </header>
       <div class="crm-workspace enter">
         <ol class="crm-pipeline" id="crm-pipeline">
-          <li><span class="crm-number">01</span><h3>Сайт</h3><p>Форма фиксирует выбранную услугу.</p></li>
-          <li><span class="crm-number">02</span><h3>Карточка заявки</h3><p>Данные появляются в новой карточке.</p></li>
-          <li><span class="crm-number">03</span><h3>Ответственный</h3><p>Заявка переходит менеджеру.</p></li>
+          <li><span class="crm-number">01</span><h3>Сайт</h3><p>Посетитель выбирает услугу.</p></li>
+          <li><span class="crm-number">02</span><h3>Карточка заявки</h3><p>CRM создаёт карточку с выбранной услугой.</p></li>
+          <li><span class="crm-number">03</span><h3>Ответственный</h3><p>Менеджер получает заявку.</p></li>
         </ol>
         <div class="crm-actions">
           <label for="crm-service">Услуга в тестовой заявке</label>
           <select id="crm-service"><option>Дизайн-проект</option><option>Ремонт под ключ</option><option>Кухня на заказ</option></select>
-          <button class="solid" type="button" id="crm-run">Провести демо-заявку</button>
+          <button class="solid" type="button" id="crm-run">Проверить передачу заявки</button>
         </div>
-        <output id="crm-status" aria-live="polite">Симуляция работает внутри презентации.</output>
+        <output id="crm-status" aria-live="polite"></output>
       </div>
     </section>
 
     <section class="slide pricing" id="pricing" data-theme="dark" data-chapter="Стоимость" aria-labelledby="pricing-title" hidden>
-      <header class="pricing-head enter"><h2 id="pricing-title" tabindex="-1">Стоимость</h2><p>Коммерческое предложение SLOY</p></header>
+      <header class="pricing-head enter"><h2 id="pricing-title" tabindex="-1">Стоимость</h2></header>
       <dl class="price-list enter">
         <div class="price-row"><dt>ArtBuro28</dt><dd>25 000 <span>₽</span></dd></div>
         <div class="price-row"><dt>Просто мебель</dt><dd>35 000 <span>₽</span></dd></div>
-        <div class="price-row price-monthly"><dt>Ежемесячное сопровождение</dt><dd>5 000 <span>₽</span><small>за сайт в месяц</small></dd></div>
+        <div class="price-row price-monthly"><dt>Сопровождение</dt><dd>5 000 <span>₽</span><small>за сайт в месяц</small></dd></div>
       </dl>
-      <p class="price-note enter">Дополнительный функционал оцениваем индивидуально.</p>
+      <p class="price-note enter">Стоимость доработок обсуждаем отдельно.</p>
     </section>
   </main>
 
   <footer class="bottombar">
     <div class="deck-indicator" aria-label="Положение в презентации">
-      <span class="slide-count"><span id="current-slide">01</span><span class="slide-total"> / 12</span></span>
+      <span class="slide-count"><span id="current-slide">01</span><span class="slide-total"></span></span>
       <div class="deck-progress" id="deck-progress" aria-hidden="true"></div>
     </div>
     <span class="sr-only" role="status" id="slide-announcement"></span>

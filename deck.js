@@ -18,9 +18,10 @@
   const motion = matchMedia("(prefers-reduced-motion: reduce)");
   const animate = window.gsap;
   const number = (value) => String(value).padStart(2, "0");
-  const titles = ["Титульный экран", "ArtBuro28", "Просто мебель", "Возможности развития", "Планировка помещения",
-    "Палитра материалов", "Калькулятор стоимости", "Конструктор интерьера", "Расширенное портфолио",
-    "Управление контентом", "Интеграция с CRM", "Стоимость"];
+  const titles = slides.map((slide) => slide.classList.contains("cover")
+    ? "Титульный экран"
+    : slide.querySelector("h2").textContent.trim().replace(/\s+/g, " "));
+  document.querySelector(".slide-total").textContent = " / " + slides.length;
   const progressMarks = [];
   const indexButtons = [];
   let active = -1;
@@ -39,10 +40,7 @@
     order.textContent = number(position + 1);
     const title = document.createElement("span");
     title.textContent = titles[position];
-    const kind = document.createElement("span");
-    kind.className = "index-kind";
-    kind.textContent = slide.classList.contains("prototype") ? "Прототип" : slide.dataset.chapter;
-    button.append(order, title, kind);
+    button.append(order, title);
     indexList.append(button);
     indexButtons.push(button);
   });
@@ -152,22 +150,24 @@
 
   const galleries = {
     art: [
-      { file: "art-home", title: "Главная страница", alt: "Главная страница ArtBuro28. Заголовок на фотографии спальни." },
-      { file: "art-projects", title: "Проекты", alt: "Раздел ArtBuro28 с фотографиями интерьеров и описанием проектов." },
-      { file: "art-quiz", title: "Подбор дизайн-проекта", alt: "Экран выбора стиля в квизе ArtBuro28.", local: true },
+      { file: "art-home", alt: "Главная страница ArtBuro28. Заголовок на фотографии спальни." },
+      { file: "art-projects", alt: "Раздел ArtBuro28 с фотографиями интерьеров и описанием проектов." },
+      { file: "art-quiz", alt: "Экран выбора стиля в квизе ArtBuro28." },
     ],
     prosto: [
-      { file: "prosto-home", title: "Главная страница", alt: "Главная сайта «Просто мебель» с заголовком «По вашим размерам»." },
-      { file: "prosto-directions", title: "Направления мебели", alt: "Экран выбора направлений на сайте «Просто мебель»." },
-      { file: "prosto-kitchens", title: "Конфигуратор кухни", alt: "Один из этапов конфигуратора кухни на сайте «Просто мебель»." },
+      { file: "prosto-home", alt: "Главная сайта «Просто мебель» с заголовком «По вашим размерам»." },
+      { file: "prosto-directions", alt: "Экран выбора направлений на сайте «Просто мебель»." },
+      { file: "prosto-kitchens", alt: "Один из этапов конфигуратора кухни на сайте «Просто мебель»." },
+    ],
+    druzhba: [
+      { file: "druzhba-home", alt: "Главная страница кафе «Дружба»." },
+      { file: "druzhba-menu", alt: "Меню кафе «Дружба» с категориями и блюдами." },
     ],
   };
 
   for (const figure of document.querySelectorAll("[data-gallery]")) {
     const data = galleries[figure.dataset.gallery];
     const image = figure.querySelector("img");
-    const label = figure.querySelector("[data-shot-title]");
-    const origin = figure.querySelector("[data-shot-origin]");
     const buttons = [...figure.querySelectorAll("[data-shot]")];
     buttons.forEach((button, selected) => {
       button.addEventListener("click", () => {
@@ -176,8 +176,6 @@
         buttons.forEach((item, i) => item.setAttribute("aria-pressed", String(i === selected)));
         image.src = "assets/screens/" + shot.file + ".webp";
         image.alt = shot.alt;
-        label.textContent = shot.title;
-        origin.textContent = shot.local ? "Локальная версия" : "Опубликованная версия";
         if (animate && !motion.matches) {
           animate.killTweensOf(image);
           animate.fromTo(image, { clipPath: "inset(0 9% 0 0)", opacity: .75 }, {

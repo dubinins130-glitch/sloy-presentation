@@ -334,21 +334,21 @@
     const input = rate.valueAsNumber;
     get("area-number").textContent = format.format(quantity) + " м²";
     const valid = rate.validity.valid && Number.isFinite(input);
-    const total = valid ? format.format(quantity * input) + " ₽" : "—";
+    const total = valid ? format.format(quantity * input) + " ₽" : "";
     estimate.textContent = total;
     estimate.dataset.long = String(total.length > 10);
     expression.textContent = valid
       ? format.format(quantity) + " м² × " + format.format(input) + " ₽ за м²"
-      : rate.value || rate.validity.badInput ? "Укажите целую положительную сумму." : "Результат появится после ввода ставки.";
+      : rate.value || rate.validity.badInput ? "Укажите целую ставку больше нуля." : "Введите ставку для расчёта.";
   }
   area.addEventListener("input", calculate);
   rate.addEventListener("input", calculate);
   calculate();
 
   const portfolio = [
-    { id: "interiors", kind: "interior", title: "Галерея интерьеров", image: "art-projects", detail: "Планировки и отделка на примерах из демонстрационного портфолио ArtBuro28." },
-    { id: "furniture", kind: "furniture", title: "Мебель для прихожей", image: "prosto-directions", detail: "Пример категории с описанием, фотографией и переходом к расчёту." },
-    { id: "kitchen", kind: "furniture", title: "Комплектация кухни", image: "prosto-kitchens", detail: "Пример отдельной страницы о кухнях и сценария выбора параметров." },
+    { id: "interiors", kind: "interior", title: "Галерея интерьеров", image: "art-projects", detail: "Фотографии и описания планировок из демосайта ArtBuro28." },
+    { id: "furniture", kind: "furniture", title: "Мебель для прихожей", image: "prosto-directions", detail: "Фото прихожей и переход к настройке мебели." },
+    { id: "kitchen", kind: "furniture", title: "Комплектация кухни", image: "prosto-kitchens", detail: "Варианты конфигурации кухни и размеры." },
   ];
   const portfolioFilter = get("portfolio-filter");
   const portfolioList = get("portfolio-list");
@@ -394,7 +394,7 @@
     }
     if (!editor.reportValidity()) return;
     updatePreview(editorTitle.value.trim(), editorDescription.value.trim());
-    editorStatus.textContent = "Макет обновлён.";
+    editorStatus.textContent = "Текст обновлён.";
   });
   editor.addEventListener("input", (event) => {
     event.target.setCustomValidity("");
@@ -404,7 +404,7 @@
     editorTitle.setCustomValidity("");
     editorDescription.setCustomValidity("");
     updatePreview(editorTitle.defaultValue, editorDescription.defaultValue);
-    editorStatus.textContent = "Возвращён исходный текст.";
+    editorStatus.textContent = "Исходный текст восстановлен.";
   });
 
   const crmButton = get("crm-run");
@@ -422,9 +422,9 @@
     crmService.disabled = true;
     const selectedService = crmService.value;
     const messages = [
-      "Сайт: выбрана услуга «" + selectedService + "».",
-      "Создана демонстрационная карточка «" + selectedService + "».",
-      "Демо-заявка назначена менеджеру.",
+      "На сайте выбрали услугу «" + selectedService + "».",
+      "В CRM появилась тестовая карточка «" + selectedService + "».",
+      "Тестовая заявка передана менеджеру.",
     ];
     if (!reduced.matches) {
       for (const active of [0, 1]) {

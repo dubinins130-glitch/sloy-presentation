@@ -104,8 +104,6 @@ a { color: inherit; }
   font-size: 14px;
 }
 .toolbar-button:hover { color: var(--subtle); }
-.index-icon { display: inline-block; width: 14px; height: 12px; border-block: 1px solid; position: relative; }
-.index-icon::after { position: absolute; content: ""; left: 0; right: 0; top: 4px; border-top: 1px solid; }
 .fullscreen-icon { width: 15px; height: 15px; border: 1px solid; clip-path: polygon(0 0, 36% 0, 36% 42%, 63% 42%, 63% 0, 100% 0, 100% 36%, 64% 36%, 64% 64%, 100% 64%, 100% 100%, 64% 100%, 64% 64%, 36% 64%, 36% 100%, 0 100%, 0 64%, 36% 64%, 36% 36%, 0 36%); }
 .fullscreen[aria-pressed="true"] .fullscreen-icon { clip-path: none; border-style: dotted; }
 
@@ -121,7 +119,7 @@ a { color: inherit; }
 .deck-indicator { display: flex; align-items: center; gap: clamp(14px, 2.7vw, 38px); }
 .slide-count { font-size: 15px; font-weight: 650; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .slide-total { font-weight: 470; color: var(--subtle); }
-.deck-progress { display: grid; grid-template-columns: repeat(12, 1fr); gap: 3px; width: clamp(94px, 21vw, 312px); }
+.deck-progress { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 3px; width: clamp(94px, 21vw, 312px); }
 .deck-progress span { height: 2px; background: var(--line); }
 .deck-progress [data-state="past"] { background: var(--subtle); }
 .deck-progress [data-state="current"] { background: var(--ink); height: 3px; }
@@ -150,7 +148,6 @@ a { color: inherit; }
   contain: layout style;
 }
 .slide :is(h1,h2) { letter-spacing: -.043em; word-spacing: .045em; font-weight: 690; line-height: .94; }
-.status { color: var(--subtle); font-size: 14px; font-weight: 600; margin-bottom: 13px; }
 
 .cover { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: clamp(15px, 4.4vh, 67px); align-content: center; }
 .cover-meta {
@@ -171,11 +168,10 @@ a { color: inherit; }
   margin-block: auto;
 }
 .cover-word {
-  font-size: min(28.4vw, 43vh, 465px);
-  letter-spacing: -.088em;
-  line-height: .73;
+  font-size: min(13.7vw, 32vh, 260px);
+  letter-spacing: -.063em;
+  line-height: .82;
   font-weight: 800;
-  padding-right: .12em;
   width: max-content;
 }
 .cover h1 { max-width: 12ch; font-size: clamp(25px, 3.15vw, 59px); line-height: .97; letter-spacing: -.04em; }
@@ -222,7 +218,7 @@ a { color: inherit; }
 .solid:disabled { opacity: .55; }
 .solid:focus-visible { outline-color: var(--ink); }
 .case-screen { min-width: 0; }
-.screen-caption, .view-switch {
+.view-switch {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -230,10 +226,8 @@ a { color: inherit; }
   gap: 5px 15px;
   font-size: 14px;
 }
-.screen-caption { border-block-start: 1px solid var(--line); }
-.screen-origin { color: var(--subtle); text-align: right; }
 .screen-image { display: grid; place-items: center; background: var(--wash); overflow: hidden; border: 1px solid var(--line); }
-.screen-image img { display: block; width: 100%; height: auto; max-height: calc(100dvh - 222px - 2 * var(--pad)); object-fit: contain; }
+.screen-image img { display: block; width: 100%; height: auto; max-height: calc(100dvh - 183px - 2 * var(--pad)); object-fit: contain; }
 .view-switch { justify-content: start; flex-wrap: wrap; gap: 0 19px; }
 .view-switch button, .text-button {
   min-height: 44px;
@@ -425,7 +419,7 @@ legend, .block-label { font-size: 15px; font-weight: 680; margin-bottom: 7px; pa
 
 .pricing { display: grid; align-content: center; gap: clamp(20px, 4vh, 49px); padding-block: clamp(18px, 3vh, 48px); }
 .pricing-head { display: flex; align-items: end; justify-content: space-between; gap: 15px; }
-.pricing-head p, .price-note { color: var(--subtle); font-size: clamp(16px, 1.52vw, 23px); }
+.price-note { color: var(--subtle); font-size: clamp(16px, 1.52vw, 23px); }
 .price-list { border-top: 1px solid var(--line); }
 .price-row {
   display: grid;
@@ -459,7 +453,7 @@ legend, .block-label { font-size: 15px; font-weight: 680; margin-bottom: 7px; pa
 .index-list { display: grid; }
 .index-list button {
   display: grid;
-  grid-template-columns: 2.8ch minmax(0, 1fr) auto;
+  grid-template-columns: 2.8ch minmax(0, 1fr);
   align-items: center;
   gap: 12px;
   text-align: start;
@@ -472,7 +466,7 @@ legend, .block-label { font-size: 15px; font-weight: 680; margin-bottom: 7px; pa
 }
 .index-list button:first-child { border-top-color: var(--ink); }
 .index-list button[aria-current="step"], .index-list button:hover { background: var(--wash); }
-.index-no, .index-kind { font-size: 13px; color: var(--subtle); }
+.index-no { font-size: 13px; color: var(--subtle); }
 
 @media (max-width: 950px) {
   .case-slide { grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); }
@@ -498,7 +492,7 @@ legend, .block-label { font-size: 15px; font-weight: 680; margin-bottom: 7px; pa
   .cover { gap: 20px; }
   .cover-meta { font-size: 14px; }
   .cover-main { grid-template-columns: 1fr; gap: 20px; }
-  .cover-word { font-size: min(38.8vw, 250px); }
+  .cover-word { font-size: min(18.1vw, 130px); }
   .cover h1 { font-size: clamp(29px, 8vw, 47px); }
   .cover-contents { grid-template-columns: 1fr; }
   .cover-contents button { min-height: 44px; }
@@ -515,7 +509,6 @@ legend, .block-label { font-size: 15px; font-weight: 680; margin-bottom: 7px; pa
   .prototype-head, .pricing-head { display: grid; align-items: start; }
   .prototype-head h2 { font-size: clamp(37px, 9.6vw, 65px); }
   .prototype-head > p { max-width: 44ch; }
-  .status { margin-bottom: 9px; }
   .workbench, .calculator-grid, .editor-grid { grid-template-columns: minmax(0, 1fr); }
   .plan-visual, .room-visual, .portfolio-visual img { max-height: none; }
   .blueprint, .room-visual canvas { width: 100%; }
@@ -538,7 +531,6 @@ legend, .block-label { font-size: 15px; font-weight: 680; margin-bottom: 7px; pa
   .price-monthly dt { font-size: clamp(17px, 5vw, 24px); }
   .price-monthly dd { font-size: clamp(27px, 8vw, 47px); }
   .price-row small { font-size: 13px; }
-  .index-kind { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
